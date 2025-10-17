@@ -12,7 +12,7 @@
 
 Protocols in this layer include:
 
--Wifi
--Ethernet
--LTE
+- Wifi
+- Ethernet
+- LTE
 - Bluetooth
