@@ -1,12 +1,12 @@
 ## A Nice Lake Image
 
-Here is a lovely real life drawing of a lake:
-![Lake Drawing)(/../images/Lake_Drawing.png)
+### Here is a lovely real life drawing of a lake:
+![Lake Drawing](/images/Lake_Drawing.png)
 
-This is the digital interperetation of the drawing:
+### This is the digital interperetation of the drawing:
 ![Lake Diital Image](/images/Lake_Virtual_Image.png)
 
-The code for this digital drawing is as follows:
+### The code for this digital drawing is as follows:
 
 0A
 0A
