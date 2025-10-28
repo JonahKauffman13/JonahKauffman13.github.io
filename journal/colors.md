@@ -1,6 +1,23 @@
 ## A Nice Lake Image
 
-Here is a lovely real life drawing of a lake
+Here is a lovely real life drawing of a lake:
 ![Lake Drawing)(/../images/Lake_Drawing.png)
 
+This is the digital interperetation of the drawing:
+![Lake Diital Image](/images/Lake_Virtual_Image.png)
 
+The code for this digital drawing is as follows:
+
+0A
+0A
+18
+95c716 95c716 31872b 95c716 95c716 31872b 31872b 31872b 95c716 95c716
+95c716 31872b 31872b 31872b 95c716 95c716 633327 95c716 95c716 95c716
+95c716 95c716 633327 95c716 95c716 95c716 633327 49b0e3 49b0e3 49b0e3
+95c716 95c716 633327 95c716 95c716 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3
+95c716 95c716 95c716 95c716 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3
+95c716 31872b 95c716 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3
+31872b 31872b 31872b 95c716 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3
+31872b 633327 31872b 95c716 95c716 49b0e3 49b0e3 49b0e3 49b0e3 49b0e3
+95c716 633327 95c716 95c716 95c716 95c716 49b0e3 49b0e3 49b0e3 49b0e3
+95c716 95c716 95c716 95c716 95c716 95c716 95c716 95c716 95c716 95c716
