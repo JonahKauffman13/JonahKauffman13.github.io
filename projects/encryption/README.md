@@ -38,12 +38,12 @@ This message is represented as a string of letters, numbers, and symbols. But we
 
 Select the first six characters from this message and copy them here:
 
-TDzoXj
+#### TDzoXj
 
 Using the ASCII table, convert these five characters to binary (if necessary,
 include leading zeroes so that each character is 8 bits): 
 
-01010100 01000100 01111010 01101111 01011000 01101010 
+#### 01010100 01000100 01111010 01101111 01011000 01101010 
 
 ### Transport Layer: Break your message into packets
 
@@ -75,22 +75,33 @@ Assume that each packet can hold two bytes. Fill in the packet information below
 ## Part 4: Reflection Questions
 
 - What is the difference between symmetric and asymmetric encryption? What purpose did each serve in this simulation?
+
 The difference between symmetric and asymmetric encrpytion is that symmetric encryption uses the same key for encrypting
  and decrypting messages. This is easy but less secure. On the other hand, asymmetric encryption uses one key to encrpyt
  the data and another to decrypt text. The first one is shared with sender and reciever, while the second is only held
  by the receiver. This is harder but more secure.
+
 - Why is it important that this protocol uses a new key for each message?
+
 If they used the same key, then eventually, they will figure out what the key is, if you keep using new ones then it is
 impossible to ppredict them.
+
 - Why is it important that you never share your secret key?
+
 You should never share this becuase it basically grants full access to what is on your computer. This could be very dangerous
 to you and leave you very vulnerable.
+
 - In the transport layer, do these messages use TCP or UDP? Why?
+
 They use TCP becuase it is a lot more reliable and secure compared to UDP. However, TCP is slower but it grants the benefits
 of being way safer.
-- Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer. 
+
+- Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer.
+ 
 In the internet layer, the packets are sent to many routers in an effort to find its destination. In the link layer, the computer is connected and the data is moved.
+
 - This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what otherinformation can they still see?
+
 They can stil see your IP adress and what computer is communicating.
 
 
