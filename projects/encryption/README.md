@@ -16,12 +16,12 @@ and the messages that you received.
 
 (If you used something other than the caesar cipher here, describe what you did)
 
-| Encoded Message | Decoded Message | Key |
-| --------------- | --------------- | --- |
-| Y KW REXQBI     | I am hungry     | 16  |
-|ST GJHFZXJ RJ YTT| No because me too 21  |
-| RAAP BXQMEQ     | Food Please     | 14  |
-| VLR EXSB POJB?  | You have Some?  | 3   |
+| Encoded Message | Decoded Message  | Key |
+| --------------- | ---------------  | --- |
+| Y KW REXQBI     | I am hungry      | 16  |
+|ST GJHFZXJ RJ YTT| No because me too| 21  |
+| RAAP BXQMEQ     | Food Please      | 14  |
+| VLR EXSB POJB?  | You have Some?   | 3   |
 
 
 ## Part 3: Connection to TCP/IP Model
@@ -75,9 +75,22 @@ Assume that each packet can hold two bytes. Fill in the packet information below
 ## Part 4: Reflection Questions
 
 - What is the difference between symmetric and asymmetric encryption? What purpose did each serve in this simulation?
+The difference between symmetric and asymmetric encrpytion is that symmetric encryption uses the same key for encrypting
+ and decrypting messages. This is easy but less secure. On the other hand, asymmetric encryption uses one key to encrpyt
+ the data and another to decrypt text. The first one is shared with sender and reciever, while the second is only held
+ by the receiver. This is harder but more secure.
 - Why is it important that this protocol uses a new key for each message?
+If they used the same key, then eventually, they will figure out what the key is, if you keep using new ones then it is
+impossible to ppredict them.
 - Why is it important that you never share your secret key?
+You should never share this becuase it basically grants full access to what is on your computer. This could be very dangerous
+to you and leave you very vulnerable.
 - In the transport layer, do these messages use TCP or UDP? Why?
-- Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer.
-- This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what other
-information can they still see?
+They use TCP becuase it is a lot more reliable and secure compared to UDP. However, TCP is slower but it grants the benefits
+of being way safer.
+- Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer. 
+In the internet layer, the packets are sent to many routers in an effort to find its destination. In the link layer, the computer is connected and the data is moved.
+- This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what otherinformation can they still see?
+They can stil see your IP adress and what computer is communicating.
+
+
