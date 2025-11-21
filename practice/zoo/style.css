@@ -1,0 +1,10 @@
+
+table, th, tr, td{
+	border:1px solid black;
+	border-collapse: collapse;
+	background-color: lightgrey
+}	
+body{
+	background-color: #abcdef;
+	color: #36454F;
+}
