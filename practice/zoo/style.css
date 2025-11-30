@@ -8,3 +8,15 @@ body{
 	background-color: #abcdef;
 	color: #36454F;
 }
+#info{
+Background-color: PapayaWhip;
+}
+
+.highlight{
+background-color: lightblue;
+
+}
+#animals{
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
