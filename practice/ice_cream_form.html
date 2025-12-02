@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Who wants ice cream??</title>
+		<script src="../js/validate.js"></script>
+	</head>
+	<body>
+
+		<h1>You're Invited to an Ice Cream Party!</h1>
+
+		<form action="https://httpbin.org/post" method="post">
+	What is your name?
+	<input type="text" name="yourname">
+	<button type="submit"> Submit</button>
+	<br><hr>
+	<label for="email"> What is your Email Address: </label>
+	<input type="email" id="email" name="email" placeholder="name@example.com">
+	<button type="submit"> Submit</button>
+	<br><hr>
+	What is your phone number?
+	<input type="text" name="phonenumber">
+	<button type="submit"> Submit</button>
+	<br><hr>
+	How mnay people will you bring with you to the party?
+	<input type="text" name="peoplebringtoparty">
+	<button type="submit"> Submit</button>
+	<br><hr>
+	<p>What is your favorite flavor of ice cream?</p>
+	<label for="Vanilla"> Vanilla</label>
+	<input type="radio" id="Vanilla" name="icecreamflavor" value="Vanilla" required>
+	<br>
+	<label for="ChocolateChip"> Chocolate Chip</label>
+	<input type="radio" id="Chocolate Chip" name="icecreamflavor" value="Chocolate Chip" required>
+	<br>
+	<label for="Stawberry"> Strawberry</label>
+	<input type="radio" id="Stawberry" name="icecreamflavor" value="Strawberry" required>
+	</br>
+	<label for="Other"> Other</label>
+	<input type="radio" id="Other" name="icecreamflavor" value="Other" required>
+	<br>
+	<button type="submit"> Submit</button>
+	</br><hr>
+	<p> Which Toppings do you like?</p>
+	<label for="Sprinkles">Sprinkles</label>
+	<input type="checkbox" id="Sprinkles" name="sprinkles">
+	<br>
+	<label for="Magic Shell">Magic Shell</label>
+	<input type="checkbox" id="Magic Shell" name="Magic Shell">
+	<br>
+	<label for="Chocolate Chips">Chocolate Chips</label>
+	<input type="checkbox" id="Chocolate Chips" name="Chocolate Chips">
+	<br>
+	<label for="Gummy Bears">Gummy Bears</label>
+	<input type="checkbox" id="Gummy Bears" name="Gummy Bears">
+	<br>
+	<label for="Other">Other</label>
+	<input type="checkbox" id="Other" name="Other">
+	<br>
+	<button type="submit"> Submit</button>
+	<br><hr>
+		<label for="Entertainment">What kind of entertainment should we have at the party?</label>
+	<select id="whatentertainment" name="whatentertainment">
+  		<option value="Balloon Animals">Balloon Animals</option>
+		<option value="Bounce House">Bounce House</option>
+  		<option value="Clown">Clown</option>
+  		<option value="Cornhole">Cornhole</option>
+		<option value="DJ">DJ</option>
+		<option value="Face Painting">Face Painting</option>
+		<option value="Magician">Magician</option>
+	<button type="submit"> Submit</button>
+	</select>
+	<br><hr>
+ 	Do you have any other suggestions or comments?
+ 	<input type="text" name="suggestions">
+	<button type="submit"> Submit</button>
+
+
+
+	</form>
+	</body>
+
+</html>
