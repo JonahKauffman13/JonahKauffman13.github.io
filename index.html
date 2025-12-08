@@ -24,12 +24,15 @@ body{background-color: pink;
 	<p>To start, I will state a quote</p>
 		<img src="images/Jonah_Football_Medium.png"
      alt="Jonah Playing Football"
-     srcset="images/Jonah_Football_Small.png 320w,
-             images/Jonah_Football_Medium.png 640w,
-             images/Jonah_Football_Large.png 1024w"
-     sizes="(max-width: 480px) 95vw,
-            (max-width: 800px) 45vw,
-            30vw">
+     usemap="#image-map">
+<map name="image-map">
+    <area alt="Best athlete with number 13"
+    title="Click to see the best athlete who has worn the number 13" 
+    href="#"
+    onclick="alert('My favorite athlete who wore the number 13 is Odell Beckham Jr, and he was a wide reciever in the NFL who constantly dominated the competition.')"
+    coords="336,232,258,128" 
+    shape="rect">
+</map>
 <blockquote>
 	<p>"It always feels impossible until its done."</p>
 	<p> -Nelson Mandela</p>
