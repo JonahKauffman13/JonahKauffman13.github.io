@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Behold! The holy grail</title>
+<style>
+.grid {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid:
+    'head      head   head'    25vh
+    'menuOne   main   menuTwo' 50vh
+    'foot      foot   foot'    25vh
+    /20vw      60vw   20vw; 
+  gap:10px;
+}
+
+#header{
+	grid-area: head;
+	background-color: green;
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
+
+#side{
+	grid-area: menuOne;
+	background-color: green;
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
+#main{
+	grid-area: main;
+	background-color: green;
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
+#sideone{
+	grid-area: menuTwo;
+	background-color: green;
+	text-align: center;
+	font-size: 50px;
+	color: black;
+}
+#foot{
+	grid-area: foot;
+	background-color: green;
+	text-align: center;
+	font-size: 50px;
+	color: black:
+}
+
+</style>
+	</head>
+	<body>
+		<div class="grid">
+			<div id="header"> HEADER </div>
+			<div id="side"> SIDE </div>
+			<div id="main"> MAIN </div>
+			<div id="sideone"> SIDE </div>
+			<div id="foot"> FOOT </div>
+
+		</div>
+
+
+
+
+	</body>
+</html>
