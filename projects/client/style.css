@@ -1,6 +1,6 @@
 body{
-background-color:red
-
-
+background-color:blue;
+body{background-image: linear-gradient(to bottom,
+	  #FFFACD,#FFB6C1);
 
 }
