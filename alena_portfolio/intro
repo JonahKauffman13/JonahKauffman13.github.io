@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Intro</title>
+<style>
+body{
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid:
+	'intro   Resume   Achievements Portfolio' 10vh
+	'image   image    text         text     ' 90vh 
+	/25vw    25vw     25vw         25vw       ;
+}
+
+#intro{
+	grid-area: intro;
+	background-color: red;
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<div id="intro">
+Intro
+</div>
+
+
+</body>
+</html>
