@@ -1,14 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Achievements</title>
+<title>Achievements/Experience</title>
+<link rel="stylesheet" href="style.css">
 
+<style>
+.grid{
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid:
+	'intro   resume   achievements portfolio' 10vh
+	'image   image    text         text     ' 90vh 
+	/25vw    25vw     25vw         25vw       ;
+}
+
+#intro{
+	grid-area: intro;
+	background-color: lavender;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #AC94F4;
+
+}
+
+#resume{
+	grid-area: resume;
+	background-color: lavender;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #AC94F4;
+}
+
+#achievements{
+	grid-area: achievements;
+	background-color: lavender;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #AC94F4;
+}
+
+#portfolio{
+	grid-area: portfolio;
+	background-color: lavender;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #AC94F4;
+}
+#text{
+	grid-area:text;
+	background-color:lavender;
+	padding: 40px;
+	margin: 100px;
+	font-size: 30px;
+	border: 10px solid;
+	border-color: purple;
+}
+#image{
+	grid-area: image;
+	background-color: blue;
+	padding:20px;
+	margin: 150px;
+}
+
+</style>
 
 </head>
 <body>
 
+	<div class="grid">
+		<div id="intro">
+			<a href="index.html">Intro</a>
+		</div>
 
+		<div id="resume">
+			<a href="resume">Resume</a>
+		</div>
 
+		<div id="achievements">
+			<a href="achievements">Achievements/Experience</a>
+		</div>
 
-</body>
-</html>
+		<div id="portfolio">
+			<a href="portfolio">Personal Portfolio</a>
+		</div>
+
+		<div id="text">
+			hello!
+		</div>
+
+		<div id="image">
+			image
+		</div>
+	</div>
+
