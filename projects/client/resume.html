@@ -10,9 +10,15 @@
 	height: 100vh;
 	width: 100vw;
 	grid:
-	'intro   resume   achievements portfolio' 10vh
-	'image   image    text         text     ' 90vh 
-	/25vw    25vw     25vw         25vw       ;
+	'name   name  intro   resume   achievements portfolio  '10vh
+	'image1 text   text    text     text         image2    '90vh
+	/17vw   15vw   17vw    17vw     17vw         17vw       ;
+}
+#name{
+	grid-area: name;
+	font-family: cursive;
+	font-size: 70px;
+	text-align: left;
 }
 
 #intro{
@@ -54,17 +60,11 @@
 #text{
 	grid-area:text;
 	background-color:lavender;
-	padding: 40px;
-	margin: 100px;
-	font-size: 30px;
-	border: 10px solid;
+	padding: 20px;
+	margin: 10px;
+	font-size: 20px;
+	border: 5px solid;
 	border-color: purple;
-}
-#image{
-	grid-area: image;
-	background-color: blue;
-	padding:20px;
-	margin: 150px;
 }
 
 </style>
@@ -73,6 +73,11 @@
 <body>
 
 	<div class="grid">
+
+		<div id="name">
+			Alena Zabler
+		</div>
+
 		<div id="intro">
 			<a href="index.html">Intro</a>
 		</div>
@@ -90,12 +95,35 @@
 		</div>
 
 		<div id="text">
-			hello!
-		</div>
+	<h3 style="background-color: #DAB1DA"> Skills </h3>
+			<ul>
+				<li>3 languages: Spanish, Arabic, Latin</li>
+				<li>3 Musical Instruments: trumpet (3 years), violin (2 years), piano (2 years)</li>
+				<li>Word, CAD, laser cutting, and 3D printing</li>
+			</ul>
+	<h3 style="text-align: right; background-color: #DAB1DA;" > Objective </h3>
+			<p style="text-align:right">My ideal job is one that teaches me 
+useful/interesting skills and offers valuable life experiences.</p>
+	<p style="text-align: right"> I would like to work in an environment where 
+I feel I am able to make a worthwhile contribution.</p>
+<h3 style="background-color: #DAB1DA">Education</h3>
+	<ul>
+		<li>NOVA(Northern VIrginia COmmunity College)</li>
+		<li>Dual enrollment student Arlington Tech</li>
+		<li>Selective School</li>
+		<li> Project Based Learning</li>
+		<li>STEM and career and technical education focused (CTE)</li>
+		<li>Honor Roll</li>
+	</ul>
+	<h3 style="background-color:#DAB1DA; text-align:right;"> Volunteer Experience or Leadership</h3>
+	<ul>
+	<li style="align:right">Rock the Green Environmental Cleanup; Milwaukee, WI (3 years)</li>
+		<li style="align: right">Free Thanksgiving meals: Racine, WI (4 years)</li>
+	</ul>
 
-		<div id="image">
-			image
-		</div>
+
+
+	</div>
 	</div>
 
 
