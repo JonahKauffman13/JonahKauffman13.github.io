@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<title>This is a Heart</title>
+<style>
+canvas{
+	border: black 1px solid;
+
+}
+
+</style>
+	</head>
+	<body>
+		<h1> This is a heart</h1>
+		<canvas id="canvas" width="800" height="800">
+	
+<script>
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// draw a red rectangle
+ctx.fillStyle = "pink";
+ctx.fillRect(0,0,100000,200000);
+
+//draw a red trianlge
+
+ctx.fillStyle = "red";
+ctx.strokeStyle = "lemonchiffon";
+ctx.beginPath();
+ctx.moveTo(800,300);
+ctx.lineTo(400,700);
+ctx.lineTo(000,300);
+ctx.lineWidth = 5;
+ctx.stroke();
+ctx.fill();
+
+//make two red arcs
+
+ctx.fillStyle = "red";
+ctx.strokeStyle = "lemonchiffon";
+ctx.lineWidth = 5;
+
+ctx.beginPath();
+ctx.arc(200,300,200,Math.PI,0);
+
+ctx.fill();
+ctx.stroke();
+
+
+ctx.fillStyle = "red";
+ctx.strokeStyle = "lemonchiffon";
+ctx.lineWidth = 5;
+
+ctx.beginPath();
+ctx.arc(600,300,200,Math.PI,0);
+
+ctx.fill();
+ctx.stroke();
+
+
+</script>
+	</canvas>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src= "../js/validate.js"></script>
+		<title> A pretty holiday tree</title>
+<style>
+	body{background-image: linear-gradient(to bottom,
+		#ab2280,#4722ab); 
+
+	}
+		#container{
+		position: relative;
+		background-color: white;
+		width: 600px;
+		height: 100vh;
+		margin: auto;
+}
+	#tree{
+		width: 0px;
+		height: 0px;
+		border-bottom: 70vh solid green;
+		border-left: 300px solid transparent;
+		border-right: 300px solid transparent;
+	}
+	#box{
+		position:absolute;
+		width: 30px;
+		height: 30px;
+		background-color: red;
+		top: 400px;
+		left: 300px;
+	}
+/* HTML: <div class="zig-zag-line"></div> */
+#zig-zag-line {
+  --a: 90deg; /* control the angle */
+  --s: 100px; /* size of the zig-zag */
+  --b: 35px;  /* control the thickness */
+  
+  background: #bf4d28;
+  height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
+  width: 500px;
+  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
+    #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
+  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+  top: 300px;
+  right: 200px;
+}
+
+
+
+</style>
+
+	</head>
+	<body>
+		<h1>This is a tree</h1>
+		<div id="container">
+			<div id="tree">
+				<div id="box"></div>
+				<div id="zig-zag-line"></div>
+			</div>
+		</div>
+	</body>
+</html>
