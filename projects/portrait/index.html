@@ -104,11 +104,11 @@ ctx.stroke();
 
 // make outline for triangle
 ctx.beginPath();
-ctx.fillStyle = "red";
-ctx.moveTo(400,225);
-ctx.lineTo(400,275);
-ctx.lineTo(425,275);
+ctx.fillStyle = "#f1c27d";
+ctx.moveTo(425,275);
+ctx.lineTo(375,275);
 ctx.lineTo(400,225);
+ctx.lineTo(425,275);
 ctx.stroke();
 ctx.fill();
 
@@ -119,7 +119,6 @@ ctx.moveTo(400,225);
 ctx.lineTo(400,275);
 ctx.lineTo(425,275);
 ctx.lineTo(400,225);
-ctx.stroke();
 ctx.fill();
 
 // arc for mouth
@@ -130,6 +129,47 @@ ctx.beginPath();
 ctx.arc(400,300,40,50,Math.PI);
 ctx.fill();
 ctx.stroke();
+
+//  left eyebrow rectangle
+ctx.fillStyle = "#714423";
+ctx.fillRect(320,205,65,10);
+
+//right eyebrow rectangle
+ctx.fillStyle = "#714423";
+ctx.fillRect(420,205,65,10);
+
+
+// ellipse for hair
+ctx.fillStyle = "#895129";
+ctx.beginPath();
+ctx.ellipse(
+	400,185,      //x,y of the center
+	35,          //x-radius
+	90,          //y-radius
+	Math.PI/2/1,  //rotation
+	0,            //start
+	2*Math.PI     //stop
+);
+ctx.fill();
+
+// triangles for hair
+ctx.beginPath();
+ctx.fillStyle = "#51465E";
+ctx.strokeStyle = "";
+ctx.moveTo(300,200);
+ctx.lineTo(325,250);
+ctx.lineTo(350,200);
+ctx.lineTo(300,200);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "#C69C6D";
+ctx.moveTo(400,225);
+ctx.lineTo(400,275);
+ctx.lineTo(425,275);
+ctx.lineTo(400,225);
+ctx.stroke();
+ctx.fill();
 
 
 
