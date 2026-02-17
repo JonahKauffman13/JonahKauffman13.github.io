@@ -36,12 +36,16 @@ ctx.strokeRect(325, 325, 150, 175);
 ctx.beginPath();
 ctx.fillStyle = "red";
 ctx.fillRect(275, 325, 50, 150);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
 ctx.strokeRect(275, 325, 50, 150);
 
 // right sleeve rectangle
 ctx.beginPath();
 ctx.fillStyle = "red";
 ctx.fillRect(475, 325, 50, 150);
+ctx.srtokeStyle = "black";
+ctx.lineWidth = 2;
 ctx.strokeRect(475, 325, 50, 150);
 
 // buttons 
@@ -54,11 +58,13 @@ ctx.fill();
 
 // middle button circle
 ctx.beginPath();
+ctx.fillStyle = "black"
 ctx.arc(400, 400, 6, 0, 2 * Math.PI);
 ctx.fill();
 
 // bottom button circle
 ctx.beginPath();
+ctx.fillStyle = "black"
 ctx.arc(400, 440, 6, 0, 2 * Math.PI);
 ctx.fill();
 
@@ -76,6 +82,8 @@ ctx.strokeRect(325, 500, 70, 150);
 ctx.beginPath();
 ctx.fillStyle = "#8B4513";
 ctx.fillRect(405, 500, 70, 150);
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2;
 ctx.strokeRect(405, 500, 70, 150);
 
 // hands
@@ -227,7 +235,7 @@ ctx.ellipse(
 );
 ctx.fill();
 
-// left shoe
+// left shoe rectangle
 ctx.beginPath();
 ctx.fillStyle = "black";
 ctx.fillRect(325, 650, 70, 25);  // x, y, width, height
@@ -235,7 +243,7 @@ ctx.strokeStyle = "black";
 ctx.lineWidth = 2;
 ctx.strokeRect(325, 650, 70, 25);
 
-// right shoe
+// right shoe rectangle
 ctx.beginPath();
 ctx.fillStyle = "black";
 ctx.fillRect(405, 650, 70, 25);
