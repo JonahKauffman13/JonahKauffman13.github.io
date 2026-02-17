@@ -23,6 +23,81 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "#D3D3D3";
 ctx.fillRect(0,0,100000,10000);
 
+
+// shirt rectangle 
+ctx.beginPath();
+ctx.fillStyle = "red";
+ctx.fillRect(325, 325, 150, 175);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.strokeRect(325, 325, 150, 175);
+
+// left sleeve rectangle
+ctx.beginPath();
+ctx.fillStyle = "red";
+ctx.fillRect(275, 325, 50, 150);
+ctx.strokeRect(275, 325, 50, 150);
+
+// right sleeve rectangle
+ctx.beginPath();
+ctx.fillStyle = "red";
+ctx.fillRect(475, 325, 50, 150);
+ctx.strokeRect(475, 325, 50, 150);
+
+// buttons 
+
+// top button circle
+ctx.beginPath();
+ctx.fillStyle = "black";
+ctx.arc(400, 360, 6, 0, 2 * Math.PI);
+ctx.fill();
+
+// middle button circle
+ctx.beginPath();
+ctx.arc(400, 400, 6, 0, 2 * Math.PI);
+ctx.fill();
+
+// bottom button circle
+ctx.beginPath();
+ctx.arc(400, 440, 6, 0, 2 * Math.PI);
+ctx.fill();
+
+//pants
+
+// left pant leg rectangle
+ctx.beginPath();
+ctx.fillStyle = "#8B4513"; 
+ctx.fillRect(325, 500, 70, 150);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.strokeRect(325, 500, 70, 150);
+
+// right pant leg rectangle
+ctx.beginPath();
+ctx.fillStyle = "#8B4513";
+ctx.fillRect(405, 500, 70, 150);
+ctx.strokeRect(405, 500, 70, 150);
+
+// hands
+
+// left hand blob
+ctx.beginPath();
+ctx.fillStyle = "#f1c27d";  
+ctx.arc(300, 480, 25, 0, 2 * Math.PI);
+ctx.fill();
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.stroke();
+
+// right hand blob
+ctx.beginPath();
+ctx.fillStyle = "#f1c27d";
+ctx.arc(500, 480, 25, 0, 2 * Math.PI);
+ctx.fill();
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.stroke();
+
 // ellipse for left ear
 
 ctx.fillStyle = "#D4AA78";
@@ -50,7 +125,7 @@ ctx.ellipse(
 );
 ctx.fill();
 
-// draw a circle  for head
+// draw a circle for head
 ctx.fillStyle = "#f1c27d";
 ctx.lineWidth = "1";
 ctx.beginPath();
@@ -152,31 +227,24 @@ ctx.ellipse(
 );
 ctx.fill();
 
-// triangles for hair
+// left shoe
 ctx.beginPath();
-ctx.fillStyle = "#51465E";
-ctx.strokeStyle = "";
-ctx.moveTo(300,200);
-ctx.lineTo(325,250);
-ctx.lineTo(350,200);
-ctx.lineTo(300,200);
-ctx.fill();
+ctx.fillStyle = "black";
+ctx.fillRect(325, 650, 70, 25);  // x, y, width, height
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.strokeRect(325, 650, 70, 25);
 
+// right shoe
 ctx.beginPath();
-ctx.fillStyle = "#C69C6D";
-ctx.moveTo(400,225);
-ctx.lineTo(400,275);
-ctx.lineTo(425,275);
-ctx.lineTo(400,225);
-ctx.stroke();
-ctx.fill();
-
+ctx.fillStyle = "black";
+ctx.fillRect(405, 650, 70, 25);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.strokeRect(405, 650, 70, 25);
 
 
 
 </script>
-	</canvas>
-
 </body>
 </html>
-
