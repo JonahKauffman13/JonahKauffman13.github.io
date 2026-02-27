@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Story Animation</title>
+  <style>
+    canvas {
+      background: lightblue;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="800" height="800"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// ================== VARIABLES ==================
+let knightX = 0;
+let dragonX = 900;
+let dragonY = 100;
+
+let dragonAppears = false;
+let frameCount = 0;
+
+// ================== DRAW FUNCTIONS ==================
+
+function drawKnight(x) {
+  // Body
+  ctx.fillStyle = "gray";
+  ctx.fillRect(x, 250, 40, 60);
+
+  // Head
+  ctx.beginPath();
+  ctx.arc(x + 20, 230, 20, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Shield (ALWAYS visible)
+  ctx.fillStyle = "silver";
+  ctx.fillRect(x + 40, 260, 20, 40);
+}
+
+function drawDragon(x, y) {
+  // Body
+  ctx.fillStyle = "green";
+  ctx.fillRect(x, y, 100, 50);
+
+  // Head
+  ctx.fillRect(x + 90, y + 10, 40, 30);
+
+  // Fire (ALWAYS visible)
+  ctx.fillStyle = "orange";
+  ctx.beginPath();
+  ctx.moveTo(x + 130, y + 25);
+  ctx.lineTo(x + 180, y + 10);
+  ctx.lineTo(x + 180, y + 40);
+  ctx.fill();
+}
+
+// ================== ANIMATION LOOP ==================
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  frameCount++;
+
+  // Move knight
+  knightX += 2;
+
+  // Dragon appears after 150 frames
+  if (frameCount > 150) {
+    dragonAppears = true;
+  }
+
+  // Move dragon if visible
+  if (dragonAppears) {
+    dragonX -= 3;
+    drawDragon(dragonX, dragonY);
+  }
+
+  drawKnight(knightX);
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
