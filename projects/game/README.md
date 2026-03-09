@@ -4,20 +4,9 @@
 This game takes place at Commanders Stadium on game-day. You navigate around the facility to help the commanders win.
 
 ## Map
-```mermaid
-    graph TD;
-    bus(((Bus)))-->Commons;
-    Library-->Commons;
-    Box-->Cafeteria;
-    Cafeteria-->Commons;
-    Commons-->Outside;
-    Outside-->Portable;
-    Portable-->rm511;
-    Portable-->Bathroom;
-```
 
-The player starts on the bus, and then is directed into the Commons. T
-They can explore, but must eventually make their way to rm511.
+![map image](game_project_map.png)
+
 
 ## Story
 
