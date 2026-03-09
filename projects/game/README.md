@@ -1,15 +1,11 @@
-# Chris Needs Coffee
+# How to Meet Jayden Daniels
 
 ## Setting
-
-This game takes place at the Arlington Career Center. I tried to f
-faithfully recreate it, with the exception of moving the 
-library to the first floor.
+This game takes place at Commanders Stadium on game-day. You navigate around the facility to help the commanders win.
 
 ## Map
-
 ```mermaid
-graph TD;
+    graph TD;
     bus(((Bus)))-->Commons;
     Library-->Commons;
     Box-->Cafeteria;
@@ -25,26 +21,20 @@ They can explore, but must eventually make their way to rm511.
 
 ## Story
 
-When the user gets to rm511, they learn that the teacher is asleep.
-They must take the teacher's coffee mug to the library, get it 
-filled, and then bring it back to the teacher.
+This game takes place at the Commanders stadium on game-day. You get to the stadium very early and want to go to the bathroom, but, you discover a dark but intriguing hallway. You go down there, grab a left over key card and enter a door that is labelled "locker-room". You go in and find Jayden very nervous. You give him some advice and even say hi to Terry. You then go back in time and watch your team win the game.
 
-The game starts 15 minutes before the morning class bell, and each
-move costs 1 minute. So this journey must be completed in 15 moves.
-Some moves (like reading a book in the library) cost extra time.
 
 ## Global Variables
 
 The most important variables are
-`haveCup` and `cupIsFull`, both
+`haveKeyCard` and `adviceIsGiven`, both
 booleans that track progress in the
 story. Depending on these two variables,
-some rooms will display different things. For example, if you walk into the
-library without the cup, it will prompt you to
-read. If you walk in with the cup, it will show
-the librarian filling the cup with coffee.
+some rooms will display different things. For example, the door to the
+lockeroom will not be able to be opened unless you have the keycard
+that you found earlier. The commanders won't win unless adviceIsGiven.
 
-I also have numeric variables called `day` and `minute` which keep track of 
+I also have numeric variables called `minute` which keeps track of 
 time. `minute` starts at 0 and counts up
 with each move.
 
