@@ -136,20 +136,20 @@ function start() {
 /    \\( (__( (__ 
 \\_/\\_/ \\___)\\___)`);
     
-    print("\nYou've just arrived here at the Arlington Career Center. " +
-            "It is currently 7:45am, so " +
-            "class starts in 15 minutes");
-    print("\nYou're sitting on the bus in front of the school. Your first" +
-            "class of the day is web design with Chris Jones.");
-    print("\nTo get off the bus, type Start");
+    print("\nYou've just arrived here at Northwest Stadium " +
+            "It is currently 12:45pm, so " +
+            "today's game starts in 15 minutes");
+    print("\nYou just got out of the security line. Your first objective" +
+            "is the Commanders to win this first game.");
+    print("\nTo go into the stadium, type Start");
     
     function processInput(input){
         if (input.toLowerCase() === "start") {
             commons();
         } else {
-            print("\nThat's not an option. Are you trying to skip school? " +
-                "You're going to have to get off the bus.");
-            print("To get off the bus, type Start");
+            print("\nThat's not an option. Don't you want to see this game? " +
+                "You're going to have to enter the stadium.");
+            print("To go into the stadium, type Start");
         }
     }
 
@@ -157,7 +157,7 @@ function start() {
 }
 
 function getDayName(dayNum) {
-    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const days = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'];
     return days[dayNum] || 'Unknown';
 }
 
