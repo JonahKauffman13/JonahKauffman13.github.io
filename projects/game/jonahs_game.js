@@ -1,12 +1,12 @@
 // Global variables
-let haveCup = false;
-let cupIsFull = false;
+let haveKeyCard = false;
+let adviceGiven = false;
 let day = 0;
 let minutes = 0;
 let gameActive = true;
-let commonsDiscovered = true;
-let outsideDiscovered = false;
-let cafeteriaDiscovered = false;
+let stadiumInsideDiscovered = true;
+let bathroomDiscovered = false;
+let hallwayDiscovered = false;
 let boxDiscovered = false;
 let libraryDiscovered = false;
 let portableDiscovered = false;
@@ -25,7 +25,7 @@ function check_time() {
     } else {
         drawMap();
         print("---");
-        print("It is 7:" + (45+minutes) + ". Class starts in " + (15 - minutes) + " minutes");
+        print("It is 7:" + (45+minutes) + ". Game starts in " + (15 - minutes) + " minutes");
         print("---");
         return true;
     }

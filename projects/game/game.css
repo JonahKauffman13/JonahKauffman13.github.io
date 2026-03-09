@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #1e1e1e;
-    font-family: 'Courier New', monospace;
-    color: #00ff00;
+    font-family: 'Varsity College', monospace;
+    color: #FFB612;
     height: 100vh;
     box-sizing: border-box;
 }
@@ -24,9 +24,9 @@ h1{
     flex-direction: column;
     max-width: 80%;
     margin: 0 auto;
-    border: 2px solid #00ff00;
+    border: 2px solid #FFB612;
     padding: 20px;
-    background-color: #000;
+    background-color: #5A1414;
     overflow: hidden;
 }
 
@@ -43,7 +43,7 @@ h1{
 #input-line {
     display: flex;
     align-items: center;
-    border-top: 1px solid #00ff00;
+    border-top: 1px solid #FFB612;
     padding-top: 10px;
 }
 
@@ -57,18 +57,18 @@ h1{
     flex: 1;
     background: transparent;
     border: none;
-    color: #00ff00;
+    color:  #FAF9F6;
     font-family: 'Courier New', monospace;
     font-size: 16px;
     outline: none;
 }
 
 #user-input::placeholder {
-    color: #008800;
+    color: #FAF9F6;
 }
 
 .ascii-art {
-    color: #00ff00;
+    color: #FAF9F6;
     line-height: 1.2;
     font-size: 12px;
 }
