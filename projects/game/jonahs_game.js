@@ -1,12 +1,12 @@
 // Global variables
-let haveKeyCard = false;
-let adviceGiven = false;
+let haveCup = false;
+let cupIsFull = false;
 let day = 0;
 let minutes = 0;
 let gameActive = true;
-let stadiumInsideDiscovered = true;
-let bathroomDiscovered = false;
-let hallwayDiscovered = false;
+let commonsDiscovered = true;
+let outsideDiscovered = false;
+let cafeteriaDiscovered = false;
 let boxDiscovered = false;
 let libraryDiscovered = false;
 let portableDiscovered = false;
@@ -25,7 +25,7 @@ function check_time() {
     } else {
         drawMap();
         print("---");
-        print("It is 7:" + (45+minutes) + ". Game starts in " + (15 - minutes) + " minutes");
+        print("It is 12:" + (45+minutes) + ". The game starts in " + (15 - minutes) + " minutes");
         print("---");
         return true;
     }
@@ -102,10 +102,10 @@ function drawMap(){
 }
 
 function tardy() {
-    print("You didn't make it to class on time, so you fail");
+    print("You didn't make it to the locker room on time, so the Commanders lose");
     
     if (day < 5) {
-        print("\nwould you like to try again tomorrow? Say yes or no");
+        print("\nwould you like to try again next week? Say yes or no");
         function processInput(input){
             if (input.toLowerCase() === "yes") {
                 day++;
@@ -131,25 +131,26 @@ function start() {
     clear();
     print("Happy " + getDayName(day) + "!");
     printAscii(`
-  __    ___  ___ 
- / _\\  / __)/ __)
-/    \\( (__( (__ 
-\\_/\\_/ \\___)\\___)`);
+ ___   __   ___
+ \\ \\  /\\ \\  / /
+  \\ \\/ /\\ \\/ /
+   \\/ /  \\/ /
+    \\/    \\/`);
     
-    print("\nYou've just arrived here at Northwest Stadium " +
+    print("\nYou've just arrived here at NorthWest Stadium. " +
             "It is currently 12:45pm, so " +
-            "today's game starts in 15 minutes");
-    print("\nYou just got out of the security line. Your first objective" +
-            "is the Commanders to win this first game.");
-    print("\nTo go into the stadium, type Start");
+            "the game starts in 15 minutes");
+    print("\nYou're standing outside in front of the stadium. Your first" +
+            "objective is to go to the bathroom, which you have been holding the whole car ride and through the security line.");
+    print("\nTo enter the stadium, type Start");
     
     function processInput(input){
         if (input.toLowerCase() === "start") {
             commons();
         } else {
-            print("\nThat's not an option. Don't you want to see this game? " +
-                "You're going to have to enter the stadium.");
-            print("To go into the stadium, type Start");
+            print("\nThat's not an option. Are you trying to miss the game? " +
+                "You're ded paid so much for your tickets.");
+            print("To enter the stadium, type Start");
         }
     }
 
@@ -177,7 +178,7 @@ __  _.-"\` \`'-.
 `);
     
     print("\nsomeone wearing a black shirt that says 'security' is standing in" +
-         "the hallway. They say that the box isn't open right now.");
+         "the hallway. They say that the food isn't ready yet.");
     print("\nPress enter to go back.");
     
     function processInput(input){
@@ -191,8 +192,8 @@ function cafeteria() {
     cafeteriaDiscovered = true;
     if (!check_time()) return;
     
-    print("\nYou eat some food. And you're a good student so you put your " +
-        "trash in the trash can and don't bring it to Chris's room.");
+    print("\nYou drink some water. And you're a good fan so you" +
+        "take a reasonable time to drink");
     print("\nWhat would you like to do next? Say one of these choices:" +
         "\n\tcommons\n\tbox\n\tstay here");
     
@@ -216,11 +217,11 @@ function portable() {
     portableDiscovered = true;
     if (!check_time()) return;
     
-    print('you have entered the <span class="location">portable</span>. ' +
-        "A toddler runs past you, and " +
-        "you're distracted by all the cool student art on the walls! ");
+    print('You have entered the <span class="location">hallway</span>. ' +
+        "A toddler commanders fan  runs past you, and " +
+        "you're distracted by all the cool commanders posters on the walls! ");
     print("\nWhere would you like to go next? Say one of these choices:" +
-        "\n\toutside\n\tbathroom\n\trm511");
+        "\n\thallway\n\tbathroom\n\trm511");
     
     function processInput(input){
         if (input.toLowerCase() === "bathroom") {
@@ -242,9 +243,9 @@ function outside() {
     outsideDiscovered = true;
     if (!check_time()) return;
     
-    print('You are <span class="location">outside!</span>. ' + 
-        "The busses have left, so there's not much to do " +
-        "out here." );
+    print('You are <span class="location">inside the walking are</span>. ' + 
+        "People keep coming in, so there's not much to do " +
+        "here." );
     print("\nWhere would you like to go next? Say one of these choices:" +
         "\n\tcommons\n\tportable\n\tMcDonalds");
     
@@ -278,9 +279,9 @@ __  _.-"\` \`'-.
 \\__/;      '-.
 `);
     
-    print("\nYou got caught by Mr. Mainor.");
+    print("\nYou got caught by Stadium Security");
     print("\nHe calls your parents and sends you home.");
-    print("\nTry to make it to class tomorrow.");
+    print("\nTry to make it to the game next week tomorrow.");
 
     tardy();
 }
