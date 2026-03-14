@@ -34,78 +34,65 @@ function check_time() {
 function drawMap(){
     let map = ``;
 
-    if(boxDiscovered){
+     if(libraryDiscovered && commonsDiscovered && cafeteriaDiscovered){
         map += `
-                                         -------
-                                         | Box |
-                                         -------
-                                             |`;
-    }
-    if(libraryDiscovered && commonsDiscovered && cafeteriaDiscovered){
-        map += `
-        -----------    -----------    -------------
-        | Library |----| Commons |----| Cafeteria |
-        -----------    -----------    -------------
+        ----------------    -------------    ------------------
+        | Security Post|----| Concourse |----| Water Fountain |
+        ----------------    -------------    ------------------
                            |`;
     }else if(libraryDiscovered && commonsDiscovered){
         map += `
-        -----------    -----------
-        | Library |----| Commons |
-        -----------    -----------
+        -----------------    -------------
+        | Security Post |----| Concourse |
+        -----------------    -------------
                            |`;
     }else if(cafeteriaDiscovered && commonsDiscovered){
         map += `
-                       -----------    -------------
-                       | Commons |----| Cafeteria |
-                       -----------    -------------
+                       -------------    ------------------
+                       | Concourse |----| Water Fountain |
+                       -------------    ------------------
                            |`;
     }else{
         map += `
-                       -----------
-                       | Commons |
-                       -----------
+                       -------------
+                       | Concourse |
+                       -------------
                            |`;
     }
     map += `
-                      -----------
-                      | Outside |
-                      -----------`;
+                      -----------------    ------------
+                      | Bathroom Area |----| Bathroom |
+                      -----------------    ------------`; 
     
-    if(portableDiscovered && rm511Discovered && bathroomDiscovered){
+    if(portableDiscovered && rm511Discovered){
         map += `
                            |
-        ---------    ------------    ------------
-        | rm511 |----| Portable |----| Bathroom |
-        ---------    ------------    ------------`
+        ---------------    ---------------  
+        | Locker Room |----| Dark Hallway |
+        ---------------    ---------------        `;
     }else if(portableDiscovered && rm511Discovered){
         map += `
                            |
-        ---------    ------------
-        | rm511 |----| Portable |
-        ---------    ------------`
+        ---------------    ----------------
+        | Locker Room |----| Dark Hallway |
+        ---------------    ----------------`
 
-    }else if(portableDiscovered && bathroomDiscovered){
-        map += `
-                           |
-                     ------------    ------------
-                     | Portable |----| Bathroom |
-                     ------------    ------------`
     }else if(portableDiscovered){
         map += `
                            |
-                     ------------
-                     | Portable |
-                     ------------`
+                     ----------------
+                     | Dark Hallway |
+                     ----------------`
     }
 
     printAscii(map);
 }
 
 function tardy() {
-    print("You didn't make it to the locker room on time, so the Commanders lose");
+    print("You didn't make it to the locker room in time, so the Commanders lose :(");
     
     if (day < 5) {
-        print("\nwould you like to try again next week? Say yes or no");
+        print("\nWould you like to try again next week? Say yes or no");
         function processInput(input){
             if (input.toLowerCase() === "yes") {
                 day++;
@@ -141,7 +128,7 @@ function start() {
             "It is currently 12:45pm, so " +
             "the game starts in 15 minutes");
     print("\nYou're standing outside in front of the stadium. Your first" +
-            "objective is to go to the bathroom, which you have been holding the whole car ride and through the security line.");
+            " objective is to go to the bathroom, which you have been holding the whole car ride and through the security line.");
     print("\nTo enter the stadium, type Start");
     
     function processInput(input){
@@ -162,48 +149,21 @@ function getDayName(dayNum) {
     return days[dayNum] || 'Unknown';
 }
 
-function box() {
-    boxDiscovered = true;
-    if (!check_time()) return;
-    
-    printAscii(` 
-__  _.-"\` \`'-.
-/||\\'.__ __{}_(
-||||  |'--.__\\
-|  L.(   ^_^|
-\\ .-' |   _ |
-| |   )\\___/
-|  \\-'\`:._]
-\\__/;      '-.
-`);
-    
-    print("\nsomeone wearing a black shirt that says 'security' is standing in" +
-         "the hallway. They say that the food isn't ready yet.");
-    print("\nPress enter to go back.");
-    
-    function processInput(input){
-        commons();
-    }
-
-    waitForInput(processInput);
-}
 
 function cafeteria() {
     cafeteriaDiscovered = true;
     if (!check_time()) return;
     
     print("\nYou drink some water. And you're a good fan so you" +
-        "take a reasonable time to drink");
+        " take a reasonable time to drink");
     print("\nWhat would you like to do next? Say one of these choices:" +
-        "\n\tcommons\n\tbox\n\tstay here");
+        "\n\tcommons\n\tstay here");
     
     function processInput(input){
         if (input.toLowerCase() === "commons") {
             commons();
         } else if (input.toLowerCase() === "stay here") {
             cafeteria();
-        } else if (input.toLowerCase() === "box") {
-            box();
         } else {
             stayHere();
             waitThenCall(cafeteria);
@@ -217,16 +177,14 @@ function portable() {
     portableDiscovered = true;
     if (!check_time()) return;
     
-    print('You have entered the <span class="location">hallway</span>. ' +
-        "A toddler commanders fan  runs past you, and " +
-        "you're distracted by all the cool commanders posters on the walls! ");
+    print('You are <span class="location">in the dark hall</span>. ' +
+        "A toddler commanders fan runs past you, " +
+        "you see all the cool commanders posters on the walls! ");
     print("\nWhere would you like to go next? Say one of these choices:" +
-        "\n\thallway\n\tbathroom\n\trm511");
+        "\n\tmysterious window\n\toutside");
     
     function processInput(input){
-        if (input.toLowerCase() === "bathroom") {
-            bathroom();
-        } else if (input.toLowerCase() === "rm511") {
+        if (input.toLowerCase() === "mysterious window") {
             rm511();
         } else if (input.toLowerCase() === "outside") {
             outside();
@@ -243,7 +201,7 @@ function outside() {
     outsideDiscovered = true;
     if (!check_time()) return;
     
-    print('You are <span class="location">inside the walking area</span>. ' + 
+    print('You are <span class="location">inside the concourse</span>. ' + 
         "People keep coming in, so there's not much to do " +
         "here." );
     print("\nWhere would you like to go next? Say one of these choices:" +
@@ -264,28 +222,6 @@ function outside() {
 
     waitForInput(processInput);
 }
-
-function mcdonalds() {
-    if (!check_time()) return;
-    
-    printAscii(` 
-__  _.-"\` \`'-.
-/||\\'.__ __{}_(
-||||  |'--.__\\
-|  L.(   ^_^|
-\\ .-' |   _ |
-| |   )\\___/
-|  \\-'\`:._]
-\\__/;      '-.
-`);
-    
-    print("\nYou got caught by Stadium Security");
-    print("\nHe calls your parents and sends you home, the Commanders lose. :(");
-    print("\nTry to make it to the game next week tomorrow.");
-
-    tardy();
-}
-
 function rm511() {
     rm511Discovered = true;
     if (!check_time()) return;
@@ -304,7 +240,7 @@ function rm511() {
                                  \`||||
 `);
         
-        print("\nJayden Daniels is crying - we can't win the game if "+
+        print("\n Through the window, Jayden Daniels is crying - we can't win the game if "+
             "the quarterback is crying!");
         print("\nYou notice a key card scanner next to the locker room, "+
             "so you need to get a key card");
@@ -315,7 +251,7 @@ function rm511() {
         
         function processInput(input){
             haveCup = true;
-            portable();
+            outside();
         }
 
         waitForInput(processInput);
@@ -333,9 +269,9 @@ function rm511() {
                                  \`||||
 `);
         
-        print("\nJayden still needs your advice! Jayden needs your advice! What are you "+
+        print("\nChris is still asleep! Chris needs coffee! What are you "+
              "waiting for??");
-        print("\nPress enter to go back out to the concourse");
+        print("\nPress enter to go back out to the hallway");
         
         function processInput(input){
             portable();
@@ -343,11 +279,11 @@ function rm511() {
 
         waitForInput(processInput);
     } else {
-        print("You open the door with the key card.");
+        print("You hand Chris the coffee.");
         setTimeout(function() {
-            print("You go over to Jayden and give him the adivce needed.");
+            print("Chris slowly looks at you and takes a few sips");
             setTimeout(function() {
-                print("And he wakes up! He understands what he ned to do! He will win the game!");
+                print("And wakes up! Your class can begin on time!");
                 print("Congrats, you saved the day!");
                 gameActive = false;
             },2000);
@@ -355,16 +291,15 @@ function rm511() {
     }
 }
 
-function bathroom() {
+function mcdonalds() {
     bathroomDiscovered = true;
     if (!check_time()) return;
     
     print("");
-    print("༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽");
     print('\nYou are now in the <span class="location">bathroom</span>. ' + 
-        "There are like 20 people in line " +
-        "how will you get in?");
-    print("\nDo you want to wait with them? I don't think you can hold it that long. Say yes or no");
+        "There are like 50 people in " +
+        "line.");
+    print("\nDo you want to wait with them?(Youprobably can't hold it that long.) Say yes or no");
     
     function processInput(input){
         if (input.toLowerCase() === "yes") {
@@ -385,31 +320,7 @@ function bathroom() {
                 },2000);
             },2000);
         } else if (input.toLowerCase() === "no") {
-            print("\nYou try to back away, but the tallest person in the " +
-                "room locks eyes with you");
-            print("\nYou feel yourself being drawn toward the toilet, and " +
-                "a trance comes over you");
-            print("\nyou stare at yourself in the mirror and lose track " +
-                "of time");
-            setTimeout(function() {
-                print("...");
-                setTimeout(function() {
-                    print("...");
-                    setTimeout(function() {
-                        print("whoa, how long have you been here?");
-                        setTimeout(function() {
-                            print("you turn around and run out you might miss the game!");
-                            setTimeout(function() {
-                                minutes = minutes + 5;
-                                portable();
-                            },1000);
-                        },2000);
-                    },2000);
-                },2000);
-            },2000);
-        } else {
-            stayHere();
-            waitThenCall(bathroom);
+            waitThenCall(outside);
         }
     }
 
@@ -446,10 +357,10 @@ function library() {
             "What would you like to do next?");
     }
 
-    print("\nSay one of these choices:\n\tstay here\n\tleave");
+    print("\nSay one of these choices:\n\twatch the crowd\n\tleave");
     
     function processInput(input){
-        if (input.toLowerCase() === "read a book") {
+        if (input.toLowerCase() === "watch the crowd") {
             print("you look into the crowd, get lost in the many people going by, " +
                 "and lose track of time");
             setTimeout(function() {
@@ -482,13 +393,13 @@ function commons() {
 
 
     if(minutes == 1){
-        print("On the way into the building, you go through the metal detctor " +
-            " and prove you have no contraband on you."
+        print("On the way into the stadium, you go through the metal detctor " +
+            "and show you have no contraband on you."
         )
     }
     
-    print('\nYou are in the <span class="location">commons</span>. ' + 
-        "Someone is on a megaphone saying that " +
+    print('\nYou are in the <span class="location">main concourse</span>. ' + 
+        "Someone is on the megaphone saying that " +
         "the game is starting soon and to take your seats, but you think you still " +
         "have plenty of time.");
     print("\nWhere would you like to go? Say one of these choices: " +
@@ -501,6 +412,7 @@ function commons() {
         } else if (input.toLowerCase() === "cafeteria") {
             cafeteria();
         } else if (input.toLowerCase() === "outside") {
+	
             outside();
         } else if (input.toLowerCase() === "stay in commons") {
             commons();
