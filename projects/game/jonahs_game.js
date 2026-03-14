@@ -149,7 +149,7 @@ function start() {
             commons();
         } else {
             print("\nThat's not an option. Are you trying to miss the game? " +
-                "You're ded paid so much for your tickets.");
+                "You  paid so much for your tickets.");
             print("To enter the stadium, type Start");
         }
     }
@@ -243,7 +243,7 @@ function outside() {
     outsideDiscovered = true;
     if (!check_time()) return;
     
-    print('You are <span class="location">inside the walking are</span>. ' + 
+    print('You are <span class="location">inside the walking area</span>. ' + 
         "People keep coming in, so there's not much to do " +
         "here." );
     print("\nWhere would you like to go next? Say one of these choices:" +
@@ -280,7 +280,7 @@ __  _.-"\` \`'-.
 `);
     
     print("\nYou got caught by Stadium Security");
-    print("\nHe calls your parents and sends you home.");
+    print("\nHe calls your parents and sends you home, the Commanders lose. :(");
     print("\nTry to make it to the game next week tomorrow.");
 
     tardy();
@@ -304,14 +304,14 @@ function rm511() {
                                  \`||||
 `);
         
-        print("\nChris is asleep - class can't start if "+
-            "the teacher is asleep!");
-        print("\nYou notice an empty coffee cup on Chris's desk, "+
-            "so you pick it up");
-        print("\nYou know that the library has coffee for teachers, so you'll "+
-            "have to go there, get the cup filled, and bring it back... "+
-            "all before the bell rings!");
-        print("\nPress enter to go back out to the hallway");
+        print("\nJayden Daniels is crying - we can't win the game if "+
+            "the quarterback is crying!");
+        print("\nYou notice a key card scanner next to the locker room, "+
+            "so you need to get a key card");
+        print("\nYou know that the security guards carry key cards, so you'll "+
+            "have to find a security guard, take the key card, and bring it back... "+
+            "all before the game starts!");
+        print("\nPress enter to go back out to the concourses");
         
         function processInput(input){
             haveCup = true;
@@ -333,9 +333,9 @@ function rm511() {
                                  \`||||
 `);
         
-        print("\nChris is still asleep! Chris needs coffee! What are you "+
+        print("\nJayden still needs your advice! Jayden needs your advice! What are you "+
              "waiting for??");
-        print("\nPress enter to go back out to the hallway");
+        print("\nPress enter to go back out to the concourse");
         
         function processInput(input){
             portable();
@@ -343,11 +343,11 @@ function rm511() {
 
         waitForInput(processInput);
     } else {
-        print("You hand Chris the coffee.");
+        print("You open the door with the key card.");
         setTimeout(function() {
-            print("Chris slowly looks at you and takes a few sips");
+            print("You go over to Jayden and give him the adivce needed.");
             setTimeout(function() {
-                print("And wakes up! Your class can begin on time!");
+                print("And he wakes up! He understands what he ned to do! He will win the game!");
                 print("Congrats, you saved the day!");
                 gameActive = false;
             },2000);
@@ -362,10 +362,9 @@ function bathroom() {
     print("");
     print("༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽");
     print('\nYou are now in the <span class="location">bathroom</span>. ' + 
-        "There are like 20 people just " +
-        "standing around in there.");
-    print("\nWhy? Is this really the best place for them to hang out?");
-    print("\nDo you want to join them? Say yes or no");
+        "There are like 20 people in line " +
+        "how will you get in?");
+    print("\nDo you want to wait with them? I don't think you can hold it that long. Say yes or no");
     
     function processInput(input){
         if (input.toLowerCase() === "yes") {
@@ -388,7 +387,7 @@ function bathroom() {
         } else if (input.toLowerCase() === "no") {
             print("\nYou try to back away, but the tallest person in the " +
                 "room locks eyes with you");
-            print("\nYou feel yourself being drawn toward the group, and " +
+            print("\nYou feel yourself being drawn toward the toilet, and " +
                 "a trance comes over you");
             print("\nyou stare at yourself in the mirror and lose track " +
                 "of time");
@@ -399,7 +398,7 @@ function bathroom() {
                     setTimeout(function() {
                         print("whoa, how long have you been here?");
                         setTimeout(function() {
-                            print("you turn around and run out");
+                            print("you turn around and run out you might miss the game!");
                             setTimeout(function() {
                                 minutes = minutes + 5;
                                 portable();
@@ -437,22 +436,21 @@ function library() {
     '-------'
 `);
         
-        print("\nMs. Martin, the librarian, sees you walk in and instantly " +
-            "recognizes Chris's favorite mug.");
-        print("\nShe takes it, fills it with some hot coffee, and hands " +
-            "it back to you.");
+        print("\nSecurity is standing around talking " +
+            "and watching over the crowd.");
+        print("\nYou see the opportunity and sneakily get behind them and take the key card right out of their back pocket.");
         cupIsFull = true;
         print("What would you like to do next?");
     } else {
-        print("The coffee is getting colder, and you're still in the library. " +
+        print("The game is starting soon, and you're still hanging with security " +
             "What would you like to do next?");
     }
 
-    print("\nSay one of these choices:\n\tread a book\n\tleave");
+    print("\nSay one of these choices:\n\tstay here\n\tleave");
     
     function processInput(input){
         if (input.toLowerCase() === "read a book") {
-            print("you cozy into a chair, open a good book, " +
+            print("you look into the crowd, get lost in the many people going by, " +
                 "and lose track of time");
             setTimeout(function() {
                 print("...");
@@ -484,15 +482,14 @@ function commons() {
 
 
     if(minutes == 1){
-        print("On the way into the building, you show your phone " +
-            "pouch to the people standing outside the door. It's clearly " +
-            "empty, but nobody stops you."
+        print("On the way into the building, you go through the metal detctor " +
+            " and prove you have no contraband on you."
         )
     }
     
     print('\nYou are in the <span class="location">commons</span>. ' + 
         "Someone is on a megaphone saying that " +
-        "everyone needs to get to class, but you think you still " +
+        "the game is starting soon and to take your seats, but you think you still " +
         "have plenty of time.");
     print("\nWhere would you like to go? Say one of these choices: " +
         "\n\tlibrary\n\tcafeteria\n\toutside " +
