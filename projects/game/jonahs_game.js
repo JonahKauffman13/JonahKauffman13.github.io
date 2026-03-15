@@ -4,9 +4,9 @@ let cupIsFull = false;
 let day = 0;
 let minutes = 0;
 let gameActive = true;
-let commonsDiscovered = true;
-let outsideDiscovered = false;
-let cafeteriaDiscovered = false;
+let concourseDiscovered = true;
+let outsideBathroomDiscovered = false;
+let waterDiscovered = false;
 let boxDiscovered = false;
 let libraryDiscovered = false;
 let portableDiscovered = false;
@@ -34,19 +34,19 @@ function check_time() {
 function drawMap(){
     let map = ``;
 
-     if(libraryDiscovered && commonsDiscovered && cafeteriaDiscovered){
+     if(libraryDiscovered && concourseDiscovered && waterDiscovered){
         map += `
         ----------------    -------------    ------------------
         | Security Post|----| Concourse |----| Water Fountain |
         ----------------    -------------    ------------------
                            |`;
-    }else if(libraryDiscovered && commonsDiscovered){
+    }else if(libraryDiscovered && concourseDiscovered){
         map += `
         -----------------    -------------
         | Security Post |----| Concourse |
         -----------------    -------------
                            |`;
-    }else if(cafeteriaDiscovered && commonsDiscovered){
+    }else if(waterDiscovered && concourseDiscovered){
         map += `
                        -------------    ------------------
                        | Concourse |----| Water Fountain |
@@ -133,7 +133,7 @@ function start() {
     
     function processInput(input){
         if (input.toLowerCase() === "start") {
-            commons();
+            concourse();
         } else {
             print("\nThat's not an option. Are you trying to miss the game? " +
                 "You  paid so much for your tickets.");
@@ -150,23 +150,23 @@ function getDayName(dayNum) {
 }
 
 
-function cafeteria() {
-    cafeteriaDiscovered = true;
+function water() {
+    waterDiscovered = true;
     if (!check_time()) return;
     
     print("\nYou drink some water. And you're a good fan so you" +
         " take a reasonable time to drink");
     print("\nWhat would you like to do next? Say one of these choices:" +
-        "\n\tcommons\n\tstay here");
+        "\n\tconcourse\n\tstay here");
     
     function processInput(input){
-        if (input.toLowerCase() === "commons") {
-            commons();
+        if (input.toLowerCase() === "concourse") {
+            concourse();
         } else if (input.toLowerCase() === "stay here") {
-            cafeteria();
+            water();
         } else {
             stayHere();
-            waitThenCall(cafeteria);
+            waitThenCall(water);
         }
     }
 
@@ -181,13 +181,13 @@ function portable() {
         "A toddler commanders fan runs past you, " +
         "you see all the cool commanders posters on the walls! ");
     print("\nWhere would you like to go next? Say one of these choices:" +
-        "\n\tmysterious window\n\toutside");
+        "\n\tmysterious window\n\toutside of bathroom");
     
     function processInput(input){
         if (input.toLowerCase() === "mysterious window") {
             rm511();
-        } else if (input.toLowerCase() === "outside") {
-            outside();
+        } else if (input.toLowerCase() === "outside of bathroom") {
+            outsideBathroom();
         } else {
             stayHere();
             waitThenCall(portable);
@@ -197,26 +197,26 @@ function portable() {
     waitForInput(processInput);
 }
 
-function outside() {
-    outsideDiscovered = true;
+function outsideBathroom() {
+    outsideBathroomDiscovered = true;
     if (!check_time()) return;
     
-    print('You are <span class="location">inside the concourse</span>. ' + 
+    print('You are <span class="location">in front of the bathroom</span>. ' + 
         "People keep coming in, so there's not much to do " +
         "here." );
     print("\nWhere would you like to go next? Say one of these choices:" +
-        "\n\tcommons\n\tportable\n\tMcDonalds");
+        "\n\tconcourse\n\tportable\n\tMcDonalds");
     
     function processInput(input){
-        if (input.toLowerCase() === "commons") {
-            commons();
+        if (input.toLowerCase() === "concourse") {
+            concourse();
         } else if (input.toLowerCase() === "portable") {
             portable();
         } else if (input.toLowerCase() === "mcdonalds") {
             mcdonalds();
         } else {
             stayHere();
-            waitThenCall(outside);
+            waitThenCall(outsideBathroom);
         }
     }
 
@@ -251,7 +251,7 @@ function rm511() {
         
         function processInput(input){
             haveCup = true;
-            outside();
+            outsideBathroom();
         }
 
         waitForInput(processInput);
@@ -374,7 +374,7 @@ function library() {
                 },1000);
             },1000);
         } else if (input.toLowerCase() === "leave") {
-            commons();
+            concourse();
         } else {
             stayHere();
             waitThenCall(library);
@@ -385,8 +385,8 @@ function library() {
 }
 
 
-function commons() {
-    commonsDiscovered = true;
+function concourse() {
+    concourseDiscovered = true;
 
 
     if (!check_time()) return;
@@ -403,22 +403,21 @@ function commons() {
         "the game is starting soon and to take your seats, but you think you still " +
         "have plenty of time.");
     print("\nWhere would you like to go? Say one of these choices: " +
-        "\n\tlibrary\n\tcafeteria\n\toutside " +
-        "\n\tstay in commons");
+        "\n\tlibrary\n\twater fountain\n\toutside of bathroom " +
+        "\n\tstay in concourse");
     
     function processInput(input){
         if (input.toLowerCase() === "library") {
             library();
-        } else if (input.toLowerCase() === "cafeteria") {
-            cafeteria();
-        } else if (input.toLowerCase() === "outside") {
-	
-            outside();
-        } else if (input.toLowerCase() === "stay in commons") {
-            commons();
+        } else if (input.toLowerCase() === "water fountain") {
+            water();
+        } else if (input.toLowerCase() === "outside of bathroom") {
+            outsideBathroom();
+        } else if (input.toLowerCase() === "stay in concourse") {
+            concourse();
         } else {
             stayHere();
-            waitThenCall(commons);
+            waitThenCall(concourse);
         }
     }
 
