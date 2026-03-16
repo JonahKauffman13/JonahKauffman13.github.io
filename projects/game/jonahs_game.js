@@ -177,8 +177,8 @@ function hallway() {
     if (!check_time()) return;
     
     print('You are <span class="location">in the dark hall</span>. ' +
-        "A toddler commanders fan runs past you, " +
-        "you see all the cool commanders posters on the walls! ");
+        "There is no one back here but, " +
+        "there is a mysterious window that you should probably look at! ");
     print("\nWhere would you like to go next? Say one of these choices:" +
         "\n\tmysterious window\n\toutside of bathroom");
     
@@ -298,6 +298,7 @@ function bathroom() {
     print('\nYou are now in the <span class="location">bathroom</span>. ' + 
         "There are like 50 people in " +
         "line.");
+    print("\nThere does seem to be an interesting dark hallway nearby though.");
     print("\nDo you want to wait with them?(You probably can't hold it that long.) Say yes or no");
     
     function processInput(input){
@@ -319,7 +320,7 @@ function bathroom() {
                 },2000);
             },2000);
         } else if (input.toLowerCase() === "no") {
-            waitThenCall(outsideBathroom);
+            outsideBathroom();
         }
     }
 
