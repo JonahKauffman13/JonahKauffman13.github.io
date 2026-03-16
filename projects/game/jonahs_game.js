@@ -1,16 +1,15 @@
 // Global variables
-let haveCup = false;
-let cupIsFull = false;
+let keyCardKnown = false;
+let hasKeyCard = false;
 let day = 0;
 let minutes = 0;
 let gameActive = true;
 let concourseDiscovered = true;
 let outsideBathroomDiscovered = false;
 let waterDiscovered = false;
-let boxDiscovered = false;
-let libraryDiscovered = false;
-let portableDiscovered = false;
-let rm511Discovered = false;
+let securityDiscovered = false;
+let hallwayDiscovered = false;
+let lockersDiscovered = false;
 let bathroomDiscovered = false; 
 
 
@@ -34,13 +33,13 @@ function check_time() {
 function drawMap(){
     let map = ``;
 
-     if(libraryDiscovered && concourseDiscovered && waterDiscovered){
+     if(securityDiscovered && concourseDiscovered && waterDiscovered){
         map += `
         ----------------    -------------    ------------------
         | Security Post|----| Concourse |----| Water Fountain |
         ----------------    -------------    ------------------
                            |`;
-    }else if(libraryDiscovered && concourseDiscovered){
+    }else if(securityDiscovered && concourseDiscovered){
         map += `
         -----------------    -------------
         | Security Post |----| Concourse |
@@ -64,20 +63,20 @@ function drawMap(){
                       | Bathroom Area |----| Bathroom |
                       -----------------    ------------`; 
     
-    if(portableDiscovered && rm511Discovered){
+    if(hallwayDiscovered && lockersDiscovered){
         map += `
                            |
         ---------------    ---------------  
         | Locker Room |----| Dark Hallway |
         ---------------    ---------------        `;
-    }else if(portableDiscovered && rm511Discovered){
+    }else if(hallwayDiscovered && lockersDiscovered){
         map += `
                            |
         ---------------    ----------------
         | Locker Room |----| Dark Hallway |
         ---------------    ----------------`
 
-    }else if(portableDiscovered){
+    }else if(hallwayDiscovered){
         map += `
                            |
                      ----------------
@@ -97,8 +96,8 @@ function tardy() {
             if (input.toLowerCase() === "yes") {
                 day++;
                 minutes = 0;
-                haveCup = false;
-                cupIsFull = false;
+                keyCardKnown = false;
+                hasKeyCard = false;
                 start();
             } else if (input.toLowerCase() === "no") {
                 print("\nok, better luck next time!");
@@ -127,8 +126,8 @@ function start() {
     print("\nYou've just arrived here at NorthWest Stadium. " +
             "It is currently 12:45pm, so " +
             "the game starts in 15 minutes");
-    print("\nYou're standing outside in front of the stadium. Your first" +
-            " objective is to go to the bathroom, which you have been holding the whole car ride and through the security line.");
+    print("\nYou're standing outside in front of the stadium. Your really want" +
+            " to go to the bathroom, which you have been holding the whole car ride and through the security line.");
     print("\nTo enter the stadium, type Start");
     
     function processInput(input){
@@ -173,8 +172,8 @@ function water() {
     waitForInput(processInput);
 }
 
-function portable() {
-    portableDiscovered = true;
+function hallway() {
+    hallwayDiscovered = true;
     if (!check_time()) return;
     
     print('You are <span class="location">in the dark hall</span>. ' +
@@ -185,12 +184,12 @@ function portable() {
     
     function processInput(input){
         if (input.toLowerCase() === "mysterious window") {
-            rm511();
+            lockers();
         } else if (input.toLowerCase() === "outside of bathroom") {
             outsideBathroom();
         } else {
             stayHere();
-            waitThenCall(portable);
+            waitThenCall(hallway);
         }
     }
 
@@ -205,15 +204,15 @@ function outsideBathroom() {
         "People keep coming in, so there's not much to do " +
         "here." );
     print("\nWhere would you like to go next? Say one of these choices:" +
-        "\n\tconcourse\n\tportable\n\tMcDonalds");
+        "\n\tconcourse\n\tdark hall\n\tbathrooms");
     
     function processInput(input){
         if (input.toLowerCase() === "concourse") {
             concourse();
-        } else if (input.toLowerCase() === "portable") {
-            portable();
-        } else if (input.toLowerCase() === "mcdonalds") {
-            mcdonalds();
+        } else if (input.toLowerCase() === "dark hall") {
+            hallway();
+        } else if (input.toLowerCase() === "bathrooms") {
+            bathroom();
         } else {
             stayHere();
             waitThenCall(outsideBathroom);
@@ -222,11 +221,11 @@ function outsideBathroom() {
 
     waitForInput(processInput);
 }
-function rm511() {
-    rm511Discovered = true;
+function lockers() {
+    lockersDiscovered = true;
     if (!check_time()) return;
 
-    if (!haveCup) {
+    if (!keyCardKnown) {
         printAscii(`
 
             _____|~~\\_____      _____________
@@ -250,12 +249,12 @@ function rm511() {
         print("\nPress enter to go back out to the concourses");
         
         function processInput(input){
-            haveCup = true;
-            outsideBathroom();
+            keyCardKnown = true;
+            concourse();
         }
 
         waitForInput(processInput);
-    } else if (haveCup && !cupIsFull) {
+    } else if (keyCardKnown && !hasKeyCard) {
         printAscii(`
 
             _____|~~\\_____      _____________
@@ -274,16 +273,16 @@ function rm511() {
         print("\nPress enter to go back out to the hallway");
         
         function processInput(input){
-            portable();
+            hallway();
         }
 
         waitForInput(processInput);
     } else {
-        print("You hand Chris the coffee.");
+        print("You give Jayden the advice.");
         setTimeout(function() {
-            print("Chris slowly looks at you and takes a few sips");
+            print("Jayden slowly looks at you and realizes...");
             setTimeout(function() {
-                print("And wakes up! Your class can begin on time!");
+                print("He can win the game! The Commanders will win the game!");
                 print("Congrats, you saved the day!");
                 gameActive = false;
             },2000);
@@ -291,7 +290,7 @@ function rm511() {
     }
 }
 
-function mcdonalds() {
+function bathroom() {
     bathroomDiscovered = true;
     if (!check_time()) return;
     
@@ -299,7 +298,7 @@ function mcdonalds() {
     print('\nYou are now in the <span class="location">bathroom</span>. ' + 
         "There are like 50 people in " +
         "line.");
-    print("\nDo you want to wait with them?(Youprobably can't hold it that long.) Say yes or no");
+    print("\nDo you want to wait with them?(You probably can't hold it that long.) Say yes or no");
     
     function processInput(input){
         if (input.toLowerCase() === "yes") {
@@ -320,37 +319,35 @@ function mcdonalds() {
                 },2000);
             },2000);
         } else if (input.toLowerCase() === "no") {
-            waitThenCall(outside);
+            waitThenCall(outsideBathroom);
         }
     }
 
     waitForInput(processInput);
 }
 
-function library() {
-    libraryDiscovered = true;
+function security() {
+    securityDiscovered = true;
     if (!check_time()) return;
     
-    if (!haveCup) {
-        print('Welcome to the <span class="location">library</span>. ' + 
+    if (!keyCardKnown) {
+        print('Welcome to the <span class="location">security post</span>. ' + 
         "What would you like to do here?");
-    } else if (haveCup && !cupIsFull) {
+    } else if (keyCardKnown && !hasKeyCard) {
         printAscii(`
-        )  (
-    (   ) )
-    ) ( (
-    _______)_
-.-'---------|  
-( C| CHRIS   |
-'-.         |
-    '_________'
-    '-------'
+         ___________________________________________
+  	|	   _____  ____   ____   ____  ____  |
+	|   /\\    |      |      |      |     |     |
+	|  /__\\   |      |      |---   |--|  |--|  |
+	| /    \\  |____  |____  |____  ___|  ___|  |
+	|___________________________________________|
+
 `);
         
         print("\nSecurity is standing around talking " +
             "and watching over the crowd.");
         print("\nYou see the opportunity and sneakily get behind them and take the key card right out of their back pocket.");
-        cupIsFull = true;
+        hasKeyCard = true;
         print("What would you like to do next?");
     } else {
         print("The game is starting soon, and you're still hanging with security " +
@@ -369,7 +366,7 @@ function library() {
                     print("...");
                     setTimeout(function() {
                         minutes = minutes + 5;
-                        library();
+                        security();
                     },1000);
                 },1000);
             },1000);
@@ -377,7 +374,7 @@ function library() {
             concourse();
         } else {
             stayHere();
-            waitThenCall(library);
+            waitThenCall(security);
         }
     }
 
@@ -403,15 +400,15 @@ function concourse() {
         "the game is starting soon and to take your seats, but you think you still " +
         "have plenty of time.");
     print("\nWhere would you like to go? Say one of these choices: " +
-        "\n\tlibrary\n\twater fountain\n\toutside of bathroom " +
+        "\n\tsecurity post\n\twater fountain\n\toutside of bathrooms " +
         "\n\tstay in concourse");
     
     function processInput(input){
-        if (input.toLowerCase() === "library") {
-            library();
+        if (input.toLowerCase() === "security post") {
+            security();
         } else if (input.toLowerCase() === "water fountain") {
             water();
-        } else if (input.toLowerCase() === "outside of bathroom") {
+        } else if (input.toLowerCase() === "outside of bathrooms") {
             outsideBathroom();
         } else if (input.toLowerCase() === "stay in concourse") {
             concourse();
