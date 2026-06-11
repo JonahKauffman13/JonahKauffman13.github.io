@@ -15,9 +15,9 @@ body{
 	height: 100vh;
 	width: 100vw;
 	grid:
-	'name   name  intro    portfolio  '10vh
-	'image1 text   text    image2    '195vh
-	/15vw   20vw   30vw    35vw      ;
+	'name   name  intro    portfolio   portfolio '10vh
+	'image1 text   text    text        image2    '380vh
+	/15vw   20vw   30vw    20vw        15vw       ;
 }
 #name{
 	grid-area: name;
@@ -46,14 +46,24 @@ body{
 }
 #text{
 	grid-area:text;
-	background-color:lavender;
+	background-color: #F2F0EF;
 	padding: 20px;
 	margin: 10px;
 	font-size: 20px;
 	border: 5px solid;
-	border-color: purple;
+	border-color: #7E7E7E;
+	align: center;
+	text-align:center;
 }
-
+ .picture{
+        width: 700px;
+        height: auto;
+	border: 3px solid black;
+ }
+ .lists{
+ 	font-size: 16px; 
+	list-style-position: inside;
+ }
 </style>
 
 </head>
@@ -74,17 +84,44 @@ Jonah Kauffman
 	</div>
 
 	<div id="text">
-		<ul>
-			<li> hello </li>
+		<h2> Here are some of the many projects I have done!</h2>
+
+			<p><a href="../projects/portrait/index.html "> Self Portrait Project </a></p>
+		<ul class="lists">
+			<li> I created a self portrait out of javascript shapes</li>
+			<li> This was very complex and required a lot of time</li>
+			<li> Overall good, however, the time it took was a lot</li>
 		</ul>
+	<img src="media/portrait.png" class="picture"  alt="self portrait">
+<hr>
 
-	<img src="ehllo" alr="porject">
-
-		<ul>
-			<li> hello </li>
+		<p> <a href="../projects/recipe/index.html"> Recipe Project </a> </p>
+		<ul class="lists">
+			<li> I created two different recipes for bananas and crepes</li>
+			<li> This was a very fun project, as I chose 2 desserts and made the recipes for them</li>
+			<li> Overall, this was very entaertaining and will be a useful website for the future</li>
 		</ul>
+	<img src="media/recipe.png" class="picture"  alt="recipe project">		
+<hr>	
 
-		<p> hi</p>
+
+			<p> <a href="../projects/game/index.html"> Personal Game Website</a> </p>
+		<ul class="lists">
+			<li> I created a test-based game website about Jayden Daniels and the Commanders</li>
+			<li> This was a very complex project, and took a lot of time</li>
+			<li> Overall, the end result was amazing and I am very happy with what I created</li>
+		</ul>
+	<img src="media/jd5_game.png" class="picture" alt="personal game">
+<hr>
+	
+			<p> <a href="../../codeberg/Island_Battle/index.html"> Island Battle Group Game</a></p>
+		<ul class="lists">
+			<li> My group and I created a full on game using javascript</li>
+			<li> It took a very long time and required hundreds of lines of code</li>
+			<li> Overall, it was a long process, but the end result was really cool</li>
+		</ul>
+	<img src="media/group_game.png" class="picture" alt="group game">
+
 	</div>
 </div>
 </body>
