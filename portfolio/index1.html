@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Intro</title>
+	<head>
+		<title> Welcome</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="faviconer/favicon.png">
+<link rel="icon" type="image/svg+xml" href="faviconer/favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="style.css">
-<meta-charset="utf-8">
+
+
 <style>
-
-body{
-	height: 100%;
-	background-attachment: fixed;
+body{background-color: pink;
 }
-
+h1{
+	font-family: Impact, serif;
+	font-size: 60px;
+}
+#starter{
+	color: #7f0000;
+	font-size: 30px;
+}
+h2{ 
+	text-align:center;
+	font-size: 30px
+}
 .grid{
 	display: grid;
 	height: 100vh;
 	width: 100vw;
 	grid:
-	'name    name    intro   portfolio' 10vh
-	'image   image   text    text     ' 120vh 
-	/15vw    25vw    25vw    35vw       ;
+	'intro   portfolio ' 10vh
+	'image   image     ' 90vh 
+	/50vw    50vw         ;
 }
-#name{
-	grid-area: name;
-	font-family: cursive;
-	font-size: 70px;
-	text-align: left;
-}
-
 
 #intro{
 	grid-area: intro;
-	background-color: #808080;
+	background-color: #BF77F6;
 	font-size: 30px;
 	text-align: center;
 	border: 3px solid;
-	border-color: #B22222;
+	border-color: #AC94F4;
 
 }
 
-#portfolio{
-	grid-area: portfolio;
-	background-color: #D3D3D3;
+#resume{
+	grid-area: resume;
+	background-color: lavender;
 	font-size: 30px;
 	text-align: center;
 	border: 3px solid;
-	border-color: #B22222;
+	border-color: #AC94F4;
+}
+
+#achievements{
+	grid-area: achievements;
+	background-color: lavender;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #AC94F4;
 }
 #text{
 	grid-area:text;
@@ -65,32 +81,24 @@ body{
 	margin-left: 60px;
 	margin-right: 79px;
 }
-#picture1{
-	padding-top: 150px;
-	padding-left: 50px;
+#picture{
 	width: 575px;
 	height: 432px;
 }
-#picture2{
-	padding-top: 200px;
-	padding-left: 150px;
-	width 575px;
-	height: 400px;
-}
+
+
 
 
 </style>
-
-</head>
-<body>
-
+	<script>
+// 	alert("Helloooo, thanks for hopping on my website!");
+</script>
+<script src="validate.js">
+<script src="main.js">
+</script>
+	</head>
+	<h1> The world of Jonah</h1>
 	<div class="grid">
-
-	 	<div id="name">
-			Jonah Kauffman
-		</div>
-
-
 		<div id="intro">
 			<a href="index.html" >Intro</a>
 		</div>
@@ -100,7 +108,7 @@ body{
 		</div>
 
 		<div id="text">
-				
+	
 
 	<p id = "starter"> My name is Jonah Kauffman, and I am a 15 year old Freshman at Arlington Tech.
 	<br> In this website, I will talk all about me, and facts that belong to me.</p>
@@ -112,20 +120,11 @@ body{
 </blockquote> 
              <h2>The following is a catalog of pictures of me</h2>
 
-	
-
+           <img src="../images/Jonah_Football_Medium.png"
+        alt="Jonah Playing Football"
+       coords="336,232,258,128" 
+       shape="rect">
 		</div>
-				<img src="../images/Jonah_Football_Medium.png" id="picture1"  alt="picture of Jonah">
-		
-		</div>
-
-		<div>
-			<img src"/media/jonah_football2.png" id="picture2" alt="pic 2">
-		</div>
-
-
 	</div>
-
-
 </body>
 </html>
