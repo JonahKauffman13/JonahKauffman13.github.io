@@ -16,8 +16,8 @@ body{
 	height: 100vh;
 	width: 100vw;
 	grid:
-	'name    name    intro   portfolio' 10vh
-	'image   image   text    text     ' 120vh 
+	'name     name     intro    portfolio' 10vh
+	'image    image    text     text     '120vh
 	/15vw    25vw    25vw    35vw       ;
 }
 #name{
@@ -70,30 +70,64 @@ body{
 	width: 300px;
 	height: auto;
 }
-#picture1{
+#picture0{
 	padding-top: 150px;
 	padding-left: 50px;
 	width: 575px;
 	height: 432px;
 }
-#picture2{
-	padding-top: 200px;
-	padding-left: 150px;
-	width 575px;
-	height: 400px;
-}
 .caption{
 	text-align: center;
 	color: red;
+  	display: inline-block; 
+  	max-width: 200%;       
+  	margin: 1px;
+ 	padding: 8px;
+  	border: 1px solid black;
+  	background-color: #f9f9f9;	
 }
-
-
+#picture1{
+	position: absolute;
+	left: 7vw;
+	top: 105vh;
+	width: 450px;
+}
+#picture2{
+	position: absolute;
+	left:37vw;
+	top: 120vh;
+	width: 400px;
+}
+#picture3{
+        position: absolute;
+        left: 67vw;
+  	top: 120vh;
+        width: 400px;
+}
+#picture4{
+        position: absolute;
+        left: 7vw;
+  	top: 190vh;
+        width: 400px;
+}
+#picture5{
+        position: absolute;
+        left: 37vw;
+  	top: 190vh;
+        width: 400px;
+}
+#picture6{
+        position: absolute;
+        left: 67vw;
+  	top: 165vh;
+        width: 400px;
+}
 </style>
 
 </head>
 <body>
 
-	<div class="grid">
+<div class="grid">
 
 	 	<div id="name">
 			Jonah Kauffman
@@ -124,23 +158,63 @@ body{
 	
 
 	</div>
+
+	<div >	
 		<figure>
-			<img src="../images/Jonah_Football_Medium.png" id="picture1"  alt="picture of Jonah">
+			<img src="../images/Jonah_Football_Medium.png" id="picture0"  alt="picture of Jonah">
 			<figcaption class="caption"> A picture of Jonah Playing Football </figcaption>
 		</figure>
-		</div>
-
-		<div>
-			<img src="media/jonah_football2.png" class="picture" "picture2" alt="pic 2">
-		</div>
-		
-		<div>
-			<img src="media/jonah_
-		</div>
-
-	
-
 	</div>
+
+	<div id="picture1">
+		<figure>
+			<img src="media/jonah_football2.png" class="picture" alt="pic 2">
+			<figcaption class="caption"> Jonah and his football team </figcaption>
+		</figure>
+	</div>
+
+	<div id="picture2">
+		<figure>
+			<img src="media/jonah_friends.png" class="picture" alt="jonah w/ friends">
+				 <figcaption class="caption">Jonah and friends</figcaption>
+		</figure>	
+	</div>
+
+	<div id="picture3">
+		<figure>
+			<img src="media/young_jonah.png" class="picture" alt"jonah as a kid">
+			<figcaption class="caption">Jonah as a young kid</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture4">
+		<figure>
+			<img src="media/baby_jonah.png" class="picture" alt"jonah as a baby">
+			<figcaption class="caption">Baby Jonah at a Baseball game</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture5">
+		<figure>
+			<img src="media/jonah_mom.png" class="picture" alt"jonah with mom">
+			<figcaption class="caption">Baby Jonah with his mom</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture6">
+		<figure>
+			<img src="media/jonah_mask.png" class="picture" alt"jonah with mask">
+			<figcaption class="caption">Jonah with a skin care face mask on </figcaption>
+
+		</figure>
+	</div>
+
+
+
+</div>
 
 
 </body>
