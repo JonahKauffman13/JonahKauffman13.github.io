@@ -1,0 +1,51 @@
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let x = 0;
+let y = 0;
+
+let vx = 1;
+let vy = 2;
+let gravity = 1;
+
+
+
+function animate(){
+	//first, we clear the screen
+	ctx.clearRect(0,0,800,800);
+
+
+	//declare where the box should be
+
+
+
+
+
+
+	//draw the box
+	ctx.fillRect(x,y,50,50);
+	requestAnimationFrame(animate);
+}
+
+animate();
+
+//event handler
+function handleKeyDown(e){
+	e.preventDefault();
+	if(e.key == "ArrowDown"){
+		y = y + vy
+	}else if (e.key == "ArrowUp"){
+		y = y + -vy
+	}else if (e.key == "ArrowLeft"){
+		x = x + -vx
+	}else if (e.key == "ArrowRight"){
+		x = x + vx
+	}
+}
+//event listener
+document.addEventListener('keydown' ,handleKeyDown)
+
+
+
+
+

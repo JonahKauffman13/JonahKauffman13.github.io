@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Canvas...with functions</title>
+	</head>
+	<body>
+		<h1>Canvas... with functions</h1>
+		<canvas width=800 height=800 id="myCanvas">
+	<script>
+		const canvas = document.getElementById("myCanvas");
+		const ctx = canvas.getContext("2d");
+
+		//start with a function we know
+		ctx.fillRect(800,800,800,800);
+
+
+		//fillRectWithColor
+		//write that!
+		function fillRectWithColor(x, y, width, height, color){
+			ctx.fillStyle = color;
+			ctx.fillRect(x, y, width, height);
+		}
+
+		fillRectWithColor(100,100,100,100,"green");
+		fillRectWithColor(600,600,100,100,"#F3564A");
+
+		//wouldn't it be nice if there were a
+		//fillCircleWithColor function?
+		//write that!
+
+		function fillCircleWithColor(x,y,r,color){
+			ctx.fillStyle=color;
+			ctx.beginPath();
+			ctx.arc(x,y,r,0,2*Math.PI);
+			ctx.fill();
+		}
+
+		fillCircleWithColor(700,200,100, "red");
+		fillCircleWithColor(400,400,100, "lemonchiffon");
+
+		//now write a function that calls fillCircleWithColor
+
+		function drawSnowman(x,y){
+			//DO THIS
+
+			fillCircleWithColor(x,y,70, "black"); //abdomen
+			fillCircleWithColor(x,y-100,50, "black"); //head
+			fillCircleWithColor(x,y+150,100, "black"); //bottom
+		}
+
+		drawSnowman(200,200);
+		drawSnowman(500,500);
+
+	
+
+
+
+
+
+
+
+	</script>
+	</body>
+</html>

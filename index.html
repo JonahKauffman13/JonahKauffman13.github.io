@@ -1,41 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title> Welcome</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" href="faviconer/favicon.png">
-<link rel="icon" type="image/svg+xml" href="faviconer/favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-
-
+<head>
+<title>Intro</title>
+<link rel="stylesheet" href="style.css">
+<meta-charset="utf-8">
 <style>
-body{background-color: pink;
-}</style>
-	<script>
-	alert("Helloooo, thanks for hopping on my website!");
-</script>
-<script src="validate.js">
-</script>
-	</head>
-	<h1> The world of Jonah</h1>
-	<p> Welcome to my skibidi website.<br> Here I will talk all about me, and facts that belong to me.</p>
+
+body{
+	height: 100%;
+	background-attachment: fixed;
+}
+
+.grid{
+	display: grid;
+	grid:
+	'name     name     intro    portfolio' 10vh
+	'image    image    text     text     '120vh
+	/15vw    20vw      30vw    35vw       ;
+}
+#name{
+	grid-area: name;
+	font-family: cursive;
+	font-size: 70px;
+	text-align: left;
+}
+
+
+#intro{
+	grid-area: intro;
+	background-color: #808080;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #B22222;
+
+}
+
+#portfolio{
+	grid-area: portfolio;
+	background-color: #D3D3D3;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid;
+	border-color: #B22222;
+}
+#text{
+	grid-area:text;
+	background-color: #F2F0EF;
+	padding: 40px;
+	margin: 120px;
+	margin-top: 7vh;
+	font-size: 30px;
+	border: 5px solid;
+	border-color: #7E7E7E;
+	text-align: center;
+}
+#image{
+	grid-area: image;
+	background-color: lavender;
+	padding: 10px;
+	margin-bottom: 103px;
+	margin-top: 120px;
+	margin-left: 60px;
+	margin-right: 79px;
+}
+.picture{
+	border: 3px solid black;
+	width: 300px;
+	height: auto;
+}
+#picture0{
+	padding-top: 15vh;
+	padding-left: 0vw;
+	width: 575px;
+	height: 432px;
+}
+.caption{
+	text-align: center;
+	color: red;
+  	display: inline-block; 
+  	max-width: 200%;       
+  	margin: 1px;
+ 	padding: 8px;
+  	border: 1px solid black;
+  	background-color: #f9f9f9;	
+}
+#picture1{
+	position: absolute;
+	left: 7vw;
+	top: 100vh;
+	width: 450px;
+}
+#picture2{
+	position: absolute;
+	left:37vw;
+	top: 115vh;
+	width: 400px;
+}
+#picture3{
+        position: absolute;
+        left: 67vw;
+  	top: 115vh;
+        width: 400px;
+}
+#picture4{
+        position: absolute;
+        left: 7vw;
+  	top: 185vh;
+        width: 400px;
+}
+#picture5{
+        position: absolute;
+        left: 37vw;
+  	top: 185vh;
+        width: 400px;
+}
+#picture6{
+        position: absolute;
+        left: 67vw;
+  	top: 160vh;
+        width: 400px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="grid">
+
+	 	<div id="name">
+			Jonah Kauffman
+		</div>
+
+
+		<div id="intro">
+			<a href="index.html" >Intro</a>
+		</div>
+
+		<div id="portfolio">
+			<a href="portfolio.html">Personal Portfolio</a>
+		</div>
+
+		<div id="text">
+				
+
+	<p id = "starter"> My name is Jonah Kauffman, and I am a 15 year old Freshman at Arlington Tech.
+	<br> In this website, there will be a gallery of my work, and images that embody me.</p>
 	<hr>
 	<p>To start, I will state a quote</p>
-		<img src="images/Jonah_Football_Medium.png"
-     alt="Jonah Playing Football"
-     usemap="#image-map">
-<map name="image-map">
-    <area alt="Best athlete with number 13"
-    title="Click to see the best athlete who has worn the number 13" 
-    href="#"
-    onclick="alert('My favorite athlete who wore the number 13 is Odell Beckham Jr, and he was a wide reciever in the NFL who constantly dominated the competition.')"
-    coords="336,232,258,128" 
-    shape="rect">
-</map>
 <blockquote>
 	<p>"It always feels impossible until its done."</p>
 	<p> -Nelson Mandela</p>
-</blockquote>
- </body>
+</blockquote> 
+             <h2>The following is a catalog of pictures of me</h2>
+			<p style=" font-size: 16px; text-color: red"> (At the top, clicking Portfolio will bring you to all of my work)</p>
+	
+
+	</div>
+
+	<div >	
+		<figure>
+			<img src="images/Jonah_Football_Medium.png" id="picture0"  alt="picture of Jonah">
+			<figcaption class="caption"> A picture of Jonah Playing Football </figcaption>
+		</figure>
+	</div>
+
+	<div id="picture1">
+		<figure>
+			<img src="media/jonah_football2.png" class="picture" alt="pic 2">
+			<figcaption class="caption"> Jonah and his football team </figcaption>
+		</figure>
+	</div>
+
+	<div id="picture2">
+		<figure>
+			<img src="media/jonah_friends.png" class="picture" alt="jonah w/ friends">
+				 <figcaption class="caption">Jonah and friends</figcaption>
+		</figure>	
+	</div>
+
+	<div id="picture3">
+		<figure>
+			<img src="media/young_jonah.png" class="picture" alt"jonah as a kid">
+			<figcaption class="caption">Jonah as a young kid</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture4">
+		<figure>
+			<img src="media/baby_jonah.png" class="picture" alt"jonah as a baby">
+			<figcaption class="caption">Baby Jonah at a Baseball game</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture5">
+		<figure>
+			<img src="media/jonah_mom.png" class="picture" alt"jonah with mom">
+			<figcaption class="caption">Baby Jonah with his mom</figcaption>
+
+		</figure>
+	</div>
+
+	<div id="picture6">
+		<figure>
+			<img src="media/jonah_mask.png" class="picture" alt"jonah with mask">
+			<figcaption class="caption">Jonah with a skin care face mask on </figcaption>
+
+		</figure>
+	</div>
+
+
+
+</div>
+
+
+</body>
 </html>
